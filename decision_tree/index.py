@@ -1,21 +1,21 @@
-#from sklearn.feature_extraction import DictVectorizer
+from sklearn.feature_extration import DictVectorizer
 import csv
-#from sklearn import preprocessing
-#from sklearn import tree
-#from sklearn.externals.six import StringIO
+from sklearn import tree
+from sklearn import preprocessing
+from sklearn.externals.six import StringIO
 
-allElectronicsData = open(r'F:\internet\machine_learning\decision_tree\test.txt', 'rt')
-reader = csv.reader(allElectronicsData)
-headers = next(reader)
-second = next(reader)
-c = next(reader)
-d = next(reader)
-f = next(reader)
+with open('sdfsdfsdf.csv', 'rb') as f:
+    reader = csv.reader(f)
+    headers = reader.next()
+    print headers
+    featureList = []
+    labelList = []
 
-print(headers)
-print(second)
-print(c)
-print(d)
-print(f)
+    for row in reader:
+        labelList.append(row[len(row) - 1])
+        rowDict = {}
+        for i in range(1, len(row) - 1):
+            rowDict[headers[i]] = row[i]
+        featureList.append(rowDict)
 
-
+    print featureList
