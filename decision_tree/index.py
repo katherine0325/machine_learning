@@ -6,7 +6,7 @@ from sklearn import tree
 from sklearn import preprocessing
 from sklearn.externals.six import StringIO
 
-with open(r'decision_tree/data_file.csv', 'rt') as f:
+with open(r'data_file.csv', 'rt') as f:
     reader = csv.reader(f)
     headers = next(reader)
     featureList = []
@@ -36,16 +36,16 @@ with open('allElectronicInformationGainOri.dot', 'w') as f:
     f = tree.export_graphviz(clf, feature_names=vec.get_feature_names(), out_file=f)
 
 # 进行预测，将第一个样本的第一个属性改变
-# 改变前
+# # 改变前
 oneRowX = dummyX[0, :]
 print(str(oneRowX))
 
 # 改变后
-# newRowX = oneRowX
-# newRowX[0] = 1
-# newRowX[2] = 0
-# print(str(newRowX))
+newRowX = oneRowX
+newRowX[0] = 1
+newRowX[2] = 0
+print(str(newRowX))
 
 #预测
-# predictedY = clf.predict([newRowX])
-# print("predictedY: " + str(predictedY))
+predictedY = clf.predict([newRowX])
+print("predictedY: " + str(predictedY))
