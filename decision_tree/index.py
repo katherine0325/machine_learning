@@ -1,10 +1,12 @@
+# -*- coding: UTF-8 -*-
+
 from sklearn.feature_extraction import DictVectorizer
 import csv
 from sklearn import tree
 from sklearn import preprocessing
 from sklearn.externals.six import StringIO
 
-with open('decision_tree/data_file.csv', 'rt') as f:
+with open(r'decision_tree/data_file.csv', 'rt') as f:
     reader = csv.reader(f)
     headers = next(reader)
     featureList = []
@@ -39,11 +41,11 @@ oneRowX = dummyX[0, :]
 print(str(oneRowX))
 
 # 改变后
-newRowX = oneRowX
-newRowX[0] = 1
-newRowX[2] = 0
-print(str(newRowX))
+# newRowX = oneRowX
+# newRowX[0] = 1
+# newRowX[2] = 0
+# print(str(newRowX))
 
 #预测
-predictedY = clf.predict([newRowX])
-print("predictedY: " + str(predictedY))
+# predictedY = clf.predict([newRowX])
+# print("predictedY: " + str(predictedY))

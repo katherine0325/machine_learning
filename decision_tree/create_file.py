@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import csv
 
 headers = ['RID','age','income','student','credit_rating','class_buys_computer']
