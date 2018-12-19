@@ -2,8 +2,11 @@ from numpy import genfromtxt
 import numpy as np
 from sklearn import datasets, linear_model
 
+# 数值型X
 dataPath = r'./test_data.csv'
-deliverData = genfromtxt(dataPath, delimiter=',')
+# 含类别类型的X
+dataCatoragePath = r'./test_catorage_data.csv'
+deliverData = genfromtxt(dataCatoragePath, delimiter=',')
 
 print('data')
 print(deliverData)
@@ -28,7 +31,10 @@ print(regr.coef_)
 print('intercept: ')
 print(regr.intercept_)
 
-x_pred = [[102, 6]]
+# test_data.csv 文件的预测
+# x_pred = [[102, 6]]
+# test_catorage_data.csv 文件的预测
+x_pred=[[90, 3, 0, 0, 1]]
 y_pred = regr.predict(x_pred)
 print('predict y_pred: ')
 print(y_pred)
